@@ -1,0 +1,27 @@
+{
+  "name": "@rma/public-site",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^1.6.21",
+    "@next/mdx": "^10.0.2",
+    "@rma/core": "*",
+    "@rma/components": "*",
+    "next": "^10.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^4.1.0",
+    "typescript": "^4.1.2"
+  }
+}

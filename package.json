@@ -1,0 +1,11 @@
+{
+  "name": "rma",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "public-site",
+    "core",
+    "components"
+  ]
+}
