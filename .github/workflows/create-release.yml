@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
       - name: Test with environment variables
         run: echo TagName $TAG_NAME - ReleaseName $RELEASE_NAME
         env:
