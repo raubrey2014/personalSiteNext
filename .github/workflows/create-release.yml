@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set current date as env variable
-        run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Create Release
@@ -20,8 +18,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: release-$NOW
-          release_name: Release $NOW
+          tag_name: release-$(date +'%Y-%m-%dT%H:%M:%S')
+          release_name: Release $(date +'%Y-%m-%dT%H:%M:%S')
           body: |
             Changes in this Release
             - First Change
