@@ -28,8 +28,8 @@ jobs:
           RELEASE_NAME: release-${{ steps.date.outputs.date }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: $TAG_NAME
-          release_name: $RELEASE_NAME
+          tag_name: echo $TAG_NAME
+          release_name: echo $RELEASE_NAME
           body: |
             Changes in this Release
             - First Change
