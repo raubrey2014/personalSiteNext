@@ -12,24 +12,20 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Get current time
-        uses: gerred/actions/current-time@master
-        id: current-time
-      - name: Use current time
-        env:
-          TIME: "${{ steps.current-time.outputs.time }}"
-        run: echo $TIME
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Test with environment variables
-        run: echo $TAG_NAME - $RELEASE_NAME
+        run: echo TagName $TAG_NAME - ReleaseName $RELEASE_NAME
         env:
-          TAG_NAME: release-${{ steps.current-time.outputs.time }}
-          RELEASE_NAME: release-${{ steps.current-time.outputs.time }}
+          TAG_NAME: release-${{ steps.date.outputs.date }}
+          RELEASE_NAME: release-${{ steps.date.outputs.date }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          TAG_NAME: release-${{ steps.current-time.outputs.time }}
-          RELEASE_NAME: release-${{ steps.current-time.outputs.time }}
+          TAG_NAME: release-${{ steps.date.outputs.date }}
+          RELEASE_NAME: release-${{ steps.date.outputs.date }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ env.TAG_NAME }}
