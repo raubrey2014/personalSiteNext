@@ -5,7 +5,6 @@
   "license": "MIT",
   "workspaces": [
     "public-site",
-    "core",
     "components"
   ]
 }

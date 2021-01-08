@@ -5,7 +5,7 @@ const withMDX = mdx({
   extension: /\.mdx?$/,
 });
 
-const withTranspileModules = transpileModules(["@rma/components", "@rma/core"]);
+const withTranspileModules = transpileModules(["@rma/components"]);
 
 module.exports = withTranspileModules(
   withMDX({ pageExtensions: ["ts", "tsx", "mdx"] })
